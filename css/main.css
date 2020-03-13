@@ -1,0 +1,46 @@
+body{
+    font-family: 'Roboto', sans-serif !important;
+    
+}
+
+.blue-dash{
+    color: #005597;
+}
+
+.bg-blue-dash{
+    background-color: #005597 !important;
+    color: white !important;
+}
+
+.btn-blue-dash{
+    background-color: #005597 !important;
+    color: white !important;
+}
+
+.nav-link:hover{
+    font-size: 1.04em !important;
+}
+
+.icon{
+    color: #D6D6D6;
+}
+
+.btn-outline-primary{
+    border-color: #005597 !important;
+    color: #005597 !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #005597 !important;
+    color: white !important;
+}
+
+.big-icon{
+    color: #D6D6D6;
+    font-size: 3.6em;
+}
+
+.big-icon-alt{
+    color:white;
+    font-size: 3.6em;
+}
