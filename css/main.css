@@ -44,3 +44,13 @@ body{
     color:white;
     font-size: 3.6em;
 }
+
+.btn-warning{
+    background-color: #B56200 !important;
+    color: white !important;
+}
+
+.btn-success{
+    background-color: #165F00 !important;
+    color: white !important;
+}
