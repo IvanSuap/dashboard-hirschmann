@@ -1,45 +1,82 @@
 $(document).ready(function() {
+
     $('.input-focus').on('click', function() {
       $(this).children('input').focus();
     });
 
     $('.clockpicker').clockpicker();
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    var data = {
+        labels: ["8","7","9","11","10"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+            type: "line",
+            label: "Line",
+            borderColor: "#FF9300",
+            backgroundColor: "#FF9300",
+            pointBorderWidth: 5,
+            fill: false,
+            data: [34.04,57.45,76.60,89.36,100.00],
+            yAxisID: 'y-axis-2'
+        },{
+            type: "bar",
+            label: "Bar",
+            borderColor: "#4D35CB",
+            backgroundColor: "#4D35CB",
+            data: [16,11,9,6,5],
+            yAxisID: 'y-axis-1'
         }]
-    },
-    options: {
+    };
+
+    var options = {
         scales: {
+            xAxes: [{
+                stacked: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Machines"
+                }
+            }],
+
             yAxes: [{
+                type: "linear",
+                position: "left",
+                id: "y-axis-1",
+                stacked: true,
                 ticks: {
-                    beginAtZero: true
+                    suggestedMin: 0
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: ""
+                }
+            },{
+                type: "linear",
+                position: "right",
+                id: "y-axis-2",
+                ticks: {
+                    suggestedMin: 0,
+                    callback: function(value) {
+                        return value + "%";
+                    }
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: ""
                 }
             }]
         }
-    }
+    };
+
+
+    window.onload = function() {
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    };
+
+
 });
-  });
