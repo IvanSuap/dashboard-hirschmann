@@ -36,14 +36,10 @@
                 <li class="nav-item">
                     <a class="nav-link blue-dash" href="views/failureCatalog.html">Failure Catalog</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link blue-dash" href="views/frequency.html">Frequency</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link blue-dash" href="views/timeConsumption.html">Time Consumption</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link blue-dash" href="views/configuration.html" tabindex="-1" aria-disabled="true">Configuration</a>
+                    <a class="nav-link blue-dash" href="views/configuration.html" tabindex="-1"
+                        aria-disabled="true">Configuration</a>
                 </li>
             </ul>
         </div>
@@ -51,11 +47,17 @@
 
     <!-- Main -->
     <main>
-        <div class="container">
+        <div class="container pr-0">
+            <div class="text-right col-12 mt-4 px-0 mx-0">
+                <a type="button" class="btn btn-warning text-white"
+                    href="docs/DashboardEmpty.pdf">Export PDF</a>
+                <a type="button" class="btn btn-success" href="docs/DashboardEmpty.xlsx">Export
+                    Excel</a>
+            </div>
             <!-- Filter Tools -->
             <div class="row mb-3 mt-4">
                 <div class="col-2">
-                    <h2 class="blue-dash">Dashboard</h2>
+                    <h2 class="blue-dash font-weight-bold">Dashboard</h2>
                 </div>
                 <div class="col-10 py-1">
                     <form action="">
@@ -132,37 +134,105 @@
             <!-- Dashboard Section-->
             <div class="row mt-4 mb-4">
                 <!-- Main Pareto Chart-->
-                <div class="col-7">
-                    <div class="card">
+                <div class="col-11 mb-4">
+                    <div class="card shadow-sm">
                         <div class="card-header bg-white border-0">
                             <div class="row">
                                 <div class="col-6">
                                     <h5 class="card-title">All Machiness</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Pareto chart of the runnig week</h6>
-                                </div>
-                                
-                                <div class="text-right col-6">              
-                                    <a type="button" class="btn btn-warning text-white" href="docs/DashboardEmpty.pdf">Export PDF</a>
-                                    <a type="button" class="btn btn-success" href="docs/DashboardEmpty.xlsx">Export Excel</a>
+                                    <h6 class="card-subtitle text-muted">Pareto chart of the runnig week</h6>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="card-body">
-                            <canvas id="myChart" height="213"></canvas>
+                            <canvas id="myChart" height="100"></canvas>
                         </div>
-                      </div>
+                    </div>
+                </div>
+                
+                <div class="col-1 mt-0 pl-0">
+                    <h4 class="blue-dash font-weight-bold">Machines</h4>
+                    <ul class="list-group p-4">
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">H392</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2">H393</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                            <label class="custom-control-label" for="customSwitch3">H394</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch4">
+                            <label class="custom-control-label" for="customSwitch4">H412</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                            <label class="custom-control-label" for="customSwitch5">H442</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch6">
+                            <label class="custom-control-label" for="customSwitch6">H452</label>
+                        </li>
+
+                        <li class="custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch7">
+                            <label class="custom-control-label" for="customSwitch7">H454</label>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Frequency & Time consumption graphics-->
+                <div class="col-12 mb-4">
+                    <p>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                            aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Frequency Chart</a>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                            data-target="#multiCollapseExample2" aria-expanded="false"
+                            aria-controls="multiCollapseExample2">Toggle Time Consumption Chart</button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                            data-target=".multi-collapse" aria-expanded="false"
+                            aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both charts</button>
+                    </p>
+                    <div class="row">
+                        <div class="col mr-0">
+                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <h4 class="blue-dash">Frequency</h4>
+                                <div class="card shadow-sm card-body px-0" >
+                                    <canvas id="myChart2" height="180"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            
+                            <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <h4 class="blue-dash">Time Consumption</h4>
+                                <div class="card shadow-sm card-body px-0" >
+                                    <canvas id="myChart3" height="180"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Cards of Machines-->
-                <div class="col-5">
-                    <div class="row">
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                <div class="col-12">
+                    <h4 class="blue-dash font-weight-bold">High Speed Assembling Machines</h4>
+                    <div class="row px-2 my-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H392
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
                                     </h5>
                                     <p class="display-block mt-4">
                                         <a href="views/individualDashboard.html" class="stretched-link">View more</a>
@@ -171,12 +241,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H393
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -186,12 +256,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H394
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -201,12 +271,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H412
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -216,12 +286,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H442
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -231,12 +301,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H452
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -246,12 +316,12 @@
                             </div>
                         </div>
 
-                        <div class="px-2 mb-2 col-6">
-                            <div class="card shadow-sm px-4 pt-3">
+                        <div class="px-2 mb-3 col-4">
+                            <div class="card shadow-sm px-4 pt-3" style="height: 160px;">
                                 <div class=" card-body p-0">
                                     <h5 class="mb-5">
                                         H454
-                                        <img src="img/machine.svg" class="float-right aling-middle" width="50%" alt="">
+                                        <img src="img/machine.svg" class="float-right aling-middle" width="45%" alt="">
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -266,7 +336,7 @@
 
             <!-- TOP 10 Problems Section-->
 
-            <h2 class="blue-dash mt-5">TOP 10 Problems of the Week</h2>
+            <h2 class="blue-dash mt-5 font-weight-bold">TOP 10 Problems of the Week</h2>
 
             <div class="row mt-5">
                 <div class="px-2 mb-3 col-4">

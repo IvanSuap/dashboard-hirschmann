@@ -1,47 +1,124 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('.input-focus').on('click', function() {
-      $(this).children('input').focus();
+    $('.input-focus').on('click', function () {
+        $(this).children('input').focus();
     });
 
     $('.clockpicker').clockpicker();
 
+    // Function to format labels of the alarms 
+    function formatLabel(str, maxwidth) {
+        var sections = [];
+        var words = str.split(" ");
+        var temp = "";
+
+        words.forEach(function (item, index) {
+            if (temp.length > 0) {
+                var concat = temp + ' ' + item;
+                if (concat.length > maxwidth) {
+                    sections.push(temp);
+                    temp = "";
+                }
+                else {
+                    if (index == (words.length - 1)) {
+                        sections.push(concat);
+                        return;
+                    }
+                    else {
+                        temp = concat;
+                        return;
+                    }
+                }
+            }
+
+            if (index == (words.length - 1)) {
+                sections.push(item);
+                return;
+            }
+
+            if (item.length < maxwidth) {
+                temp = item;
+            }
+            else {
+                sections.push(item);
+            }
+
+        });
+
+        return sections;
+    }
+
+
     var data = {
-        labels: ["8","7","9","11","10"],
+        labels: ["8ST00: Door 02 open (+ST00-FQ02)", "ST06: Quality - NOK counter reached", "ST00: Box 1 full (box change, 3 seconds)", "ST01: Feed female housing type NOK, remove part (+ST01-BG03)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)"],
         datasets: [{
             type: "line",
-            label: "Line",
             borderColor: "#FF9300",
+
             backgroundColor: "#FF9300",
             pointBorderWidth: 5,
             fill: false,
-            data: [34.04,57.45,76.60,89.36,100.00],
+            data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00],
             yAxisID: 'y-axis-2'
-        },{
+        }, {
             type: "bar",
-            label: "Bar",
-            borderColor: "#4D35CB",
-            backgroundColor: "#4D35CB",
-            data: [16,11,9,6,5],
+            borderColor: "rgba(40,53,147 ,1)",
+            borderWidth: 3,
+            backgroundColor: "rgba(40,53,147 ,0.7)",
+            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1],
+            yAxisID: 'y-axis-1'
+        }]
+    };
+
+    var data2 = {
+        labels: ["H392", "H393", "H394", "H412", "H442", "H452", "H454"],
+        datasets: [{
+            type: "line",
+            borderColor: "#FF9300",
+
+            backgroundColor: "#FF9300",
+            pointBorderWidth: 5,
+            fill: false,
+            data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00],
+            yAxisID: 'y-axis-2'
+        }, {
+            type: "bar",
+            borderColor: "rgba(40,53,147 ,1)",
+            borderWidth: 3,
+            backgroundColor: "rgba(40,53,147 ,0.7)",
+            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1],
             yAxisID: 'y-axis-1'
         }]
     };
 
     var options = {
+
         scales: {
             xAxes: [{
-                stacked: true,
+                ticks: {
+                    fontSize: 11,
+                    maxRotation: 0,
+                    minRotation: 0,
+                    callback: function (value, index, values) {
+                        var formmatedvalue = formatLabel(value, 15);
+                        return formmatedvalue;
+                    }
+                },
+                stacked: false,
                 scaleLabel: {
-                    display: true,
-                    labelString: "Machines"
+                    display: false,
+                    labelString: "Alarms"
                 }
             }],
 
             yAxes: [{
+                gridLines: {
+                    display: false
+                },
                 type: "linear",
                 position: "left",
                 id: "y-axis-1",
-                stacked: true,
+                stacked: false,
                 ticks: {
                     suggestedMin: 0
                 },
@@ -49,13 +126,13 @@ $(document).ready(function() {
                     display: true,
                     labelString: ""
                 }
-            },{
+            }, {
                 type: "linear",
                 position: "right",
                 id: "y-axis-2",
                 ticks: {
                     suggestedMin: 0,
-                    callback: function(value) {
+                    callback: function (value) {
                         return value + "%";
                     }
                 },
@@ -64,11 +141,14 @@ $(document).ready(function() {
                     labelString: ""
                 }
             }]
-        }
+        },
+        legend: {
+            display: false
+        },
     };
 
 
-    window.onload = function() {
+    window.onload = function () {
         var ctx = document.getElementById("myChart").getContext("2d");
 
         window.myBar = new Chart(ctx, {
@@ -76,7 +156,25 @@ $(document).ready(function() {
             data: data,
             options: options
         });
+
+        var ctx2 = document.getElementById("myChart2").getContext("2d");
+
+        window.myBar = new Chart(ctx2, {
+            type: 'bar',
+            data: data2,
+            options: options
+        });
+
+        var ctx3 = document.getElementById("myChart3").getContext("2d");
+
+        window.myBar = new Chart(ctx3, {
+            type: 'bar',
+            data: data2,
+            options: options
+        });
     };
+
+
 
 
 });
