@@ -40,6 +40,11 @@ body{
     font-size: 3.6em;
 }
 
+.huge-icon{
+    color: #D6D6D6;
+    font-size: 4.6em;
+}
+
 .big-icon-alt{
     color:white;
     font-size: 3.6em;
@@ -53,4 +58,8 @@ body{
 .btn-success{
     background-color: #165F00 !important;
     color: white !important;
+}
+
+.btn-primary{
+    background-color: #005597 !important;
 }
