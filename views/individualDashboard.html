@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="col">
-                                <button type="submit" class="btn btn-outline-primary btn-block">Filter</button>
+                                <a onclick="filterDashboardMachine()" class="btn btn-outline-primary btn-block">Filter</a>
                             </div>
                         </div>
                     </form>
@@ -129,7 +129,9 @@
             <div class="row mt-4 mb-4">
                 <!-- Main Pareto Chart-->
                 <div class="col-9">
+                    <h6 id="resume_machine">Resume of general data</h6>
                     <div class="card shadow-sm p-2">
+                        <p class="ml-3"><small>Hours</small></p>
                         <canvas id="myChart" width="400" height="250"></canvas>
                     </div>
                 </div>

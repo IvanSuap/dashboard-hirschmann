@@ -182,16 +182,39 @@ function selectedMachine(){
     var favorite = [];
     $.each($("input[name='customSwitch']:checked"), function(){
         favorite.push($(this).val());
+        
         document.getElementById("title_machines").innerHTML = "Selected " +favorite.join(", ");
+        document.getElementById("frequency_title").innerHTML = "- " +favorite.join(", ");
+        document.getElementById("consumption_title").innerHTML = "- " +favorite.join(", ");
     });
 
     $.each($("input[name='customSwitch']"), function(){
         favorite.push($(this).val());
-        
         if(favorite.length == 1){
             document.getElementById("title_machines").innerHTML = "All Machines";
+            document.getElementById("frequency_title").innerHTML = "- All Machines";
+        document.getElementById("consumption_title").innerHTML = "- All Machines";
         }
     });
+}
 
+function filterDashboard(){
+    let startDate = document.getElementById("startDate").value;
+    let startTime = document.getElementById("startTime").value;
+    let endDate = document.getElementById("endDate").value;
+    let endTime = document.getElementById("endTime").value;
+    
+    document.getElementById("filter_text").innerHTML = startDate+", "+startTime+" - "+endDate+", "+endTime
+    document.getElementById("frequency_filter").innerHTML = startDate+", "+startTime+" - "+endDate+", "+endTime
+    document.getElementById("consumption_filter").innerHTML = startDate+", "+startTime+" - "+endDate+", "+endTime
+}
+
+function filterDashboardMachine(){
+    let startDate = document.getElementById("startDate").value;
+    let startTime = document.getElementById("startTime").value;
+    let endDate = document.getElementById("endDate").value;
+    let endTime = document.getElementById("endTime").value;
+    
+    document.getElementById("resume_machine").innerHTML = startDate+", "+startTime+" - "+endDate+", "+endTime
     
 }
