@@ -169,9 +169,11 @@ $(document).ready(function () {
 
         window.myBar = new Chart(ctx3, {
             type: 'bar',
-            data: data2,
+            data: data,
             options: options
         });
+
+       
     };
 
 });

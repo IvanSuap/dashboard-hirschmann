@@ -36,9 +36,10 @@
                 <li class="nav-item">
                     <a class="nav-link blue-dash" href="failureCatalog.html">Failure Catalog</a>
                 </li>
-                
+
                 <li class="nav-item">
-                    <a class="nav-link blue-dash" href="configuration.html" tabindex="-1" aria-disabled="true">Configuration</a>
+                    <a class="nav-link blue-dash" href="configuration.html" tabindex="-1"
+                        aria-disabled="true">Configuration</a>
                 </li>
             </ul>
         </div>
@@ -48,8 +49,7 @@
     <main>
         <div class="container">
             <div class="text-right col-12 mt-4 px-0 mx-0">
-                <a type="button" class="btn btn-warning text-white"
-                    href="../docs/DashboardEmpty.pdf">Export PDF</a>
+                <a type="button" class="btn btn-warning text-white" href="../docs/DashboardEmpty.pdf">Export PDF</a>
                 <a type="button" class="btn btn-success" href="../docs/DashboardEmpty.xlsx">Export
                     Excel</a>
             </div>
@@ -57,18 +57,18 @@
             <div class="row mb-3 mt-4">
                 <div class="col-2">
                     <h2 class="blue-dash font-weight-bold">Dashboard</h2>
-                    
+
                 </div>
 
 
                 <div class="col-10 py-1">
                     <form action="">
                         <div class="form-row">
-                        
+
 
                             <div class="col">
                                 <div class="input-group input-focus">
-                                    
+
                                     <input type="date" class="form-control border-right-0" name="startDate"
                                         id="startDate">
                                     <div class="input-group-prepend">
@@ -117,7 +117,8 @@
                             </div>
 
                             <div class="col">
-                                <a onclick="filterDashboardMachine()" class="btn btn-outline-primary btn-block">Filter</a>
+                                <a onclick="filterDashboardMachine()"
+                                    class="btn btn-outline-primary btn-block">Filter</a>
                             </div>
                         </div>
                     </form>
@@ -129,12 +130,12 @@
             <div class="row mt-4 mb-4">
                 <!-- Main Pareto Chart-->
                 <div class="col-9">
-                    
+
                     <div class="card shadow-sm p-2">
                         <h4 class="px-2 card-title blue-dash">Machine Name</h4>
                         <h6 class="px-2 card-subtitle text-muted mb-3" id="resume_machine">Resume of general data</h6>
                         <p class="ml-3"><small>Hours</small></p>
-                        <canvas id="myChart" width="400" height="250"></canvas>
+                        <canvas id="myChart" width="400" height="150"></canvas>
                     </div>
                 </div>
 
@@ -147,7 +148,7 @@
                                     <h5 class="mb-5">
                                         Lost Time
                                         <span class="float-right aling-middle big-icon" alt=""><i
-                                            class="fas fa-stopwatch"></i></span>
+                                                class="fas fa-stopwatch"></i></span>
 
                                     </h5>
                                     <p class="display-block mt-4">
@@ -157,13 +158,38 @@
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
 
-           
-            
+
+            <!-- Frequency & Time consumption graphics-->
+            <div class="col-12 mt-4 mb-4 px-0">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <button
+                            class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0"
+                            data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+                            aria-controls="multiCollapseExample1">Toggle Frequency Chart</button>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <h4 class="blue-dash">Frequency </h4>
+                            
+                            <div class="card shadow-sm card-body px-0">
+                                <p class="ml-3"><small>Times</small></p>
+                                <canvas id="myChart3" height="80"></canvas>
+                                <canvas id="myChart2" style="display: none;" height="80"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
     </main>
 

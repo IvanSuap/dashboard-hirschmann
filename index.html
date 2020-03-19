@@ -205,48 +205,26 @@
                 <!-- Frequency & Time consumption graphics-->
                 <div class="col-12 mt-4 mb-4">
                     <div class="row mb-4">
-                        <div class="col-4">
+                        <div class="col-12">
                             <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0"
                                 data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
                                 aria-controls="multiCollapseExample1">Toggle Frequency Chart</button>
                         </div>
-                        <div class="col-4">
-                            <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0"
-                                type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-                                aria-expanded="false" aria-controls="multiCollapseExample2">Toggle Time Consumption
-                                Chart</button>
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0" type="button" data-toggle="collapse"
-                                data-target=".multi-collapse" aria-expanded="false"
-                                aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both charts</button>
-                        </div>
+                        
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="collapse multi-collapse" id="multiCollapseExample1">
                                 <h4 class="blue-dash">Frequency <small class="text-muted" id="frequency_title">- All
                                         Machines</small></h4>
                                 <h6 id="frequency_filter">Resume of general data</h6>
-                                <div class="card shadow-sm card-body px-0">
-                                    <p class="ml-3"><small>Hours</small></p>
-                                    <canvas id="myChart2" height="180"></canvas>
+                                <div class="card shadow-sm card-body px-0" style="height: 100%;">
+                                    <p class="ml-3"><small>Times</small></p>
+                                    <canvas id="myChart2" height=80"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-
-                            <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                <h4 class="blue-dash">Time Consumption <small class="text-muted"
-                                        id="consumption_title">- All Machines</small></h4>
-
-                                <h6 id="consumption_filter">Resume of general data</h6>
-                                <div class="card shadow-sm card-body px-0">
-                                    <p class="ml-3"><small>Hours</small></p>
-                                    <canvas id="myChart3" height="180"></canvas>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
