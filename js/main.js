@@ -174,7 +174,24 @@ $(document).ready(function () {
         });
     };
 
-
-
-
 });
+
+
+function selectedMachine(){
+
+    var favorite = [];
+    $.each($("input[name='customSwitch']:checked"), function(){
+        favorite.push($(this).val());
+        document.getElementById("title_machines").innerHTML = "Selected " +favorite.join(", ");
+    });
+
+    $.each($("input[name='customSwitch']"), function(){
+        favorite.push($(this).val());
+        
+        if(favorite.length == 1){
+            document.getElementById("title_machines").innerHTML = "All Machines";
+        }
+    });
+
+    
+}
