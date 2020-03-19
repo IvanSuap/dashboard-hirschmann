@@ -49,8 +49,8 @@
         <div class="container">
             <div class="text-right col-12 mt-4 px-0 mx-0">
                 <a type="button" class="btn btn-warning text-white"
-                    href="docs/DashboardEmpty.pdf">Export PDF</a>
-                <a type="button" class="btn btn-success" href="docs/DashboardEmpty.xlsx">Export
+                    href="../docs/DashboardEmpty.pdf">Export PDF</a>
+                <a type="button" class="btn btn-success" href="../docs/DashboardEmpty.xlsx">Export
                     Excel</a>
             </div>
             <!-- Filter Tools -->
@@ -129,8 +129,10 @@
             <div class="row mt-4 mb-4">
                 <!-- Main Pareto Chart-->
                 <div class="col-9">
-                    <h6 id="resume_machine">Resume of general data</h6>
+                    
                     <div class="card shadow-sm p-2">
+                        <h4 class="px-2 card-title blue-dash">Machine Name</h4>
+                        <h6 class="px-2 card-subtitle text-muted mb-3" id="resume_machine">Resume of general data</h6>
                         <p class="ml-3"><small>Hours</small></p>
                         <canvas id="myChart" width="400" height="250"></canvas>
                     </div>

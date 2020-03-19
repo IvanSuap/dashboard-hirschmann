@@ -36,7 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link blue-dash" href="views/failureCatalog.html">Failure Catalog</a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link blue-dash" href="views/configuration.html" tabindex="-1"
                         aria-disabled="true">Configuration</a>
@@ -49,8 +49,7 @@
     <main>
         <div class="container pr-0">
             <div class="text-right col-12 mt-4 px-0 mx-0">
-                <a type="button" class="btn btn-warning text-white"
-                    href="docs/DashboardEmpty.pdf">Export PDF</a>
+                <a type="button" class="btn btn-warning text-white" href="docs/DashboardEmpty.pdf">Export PDF</a>
                 <a type="button" class="btn btn-success" href="docs/DashboardEmpty.xlsx">Export
                     Excel</a>
             </div>
@@ -64,14 +63,16 @@
                         <div class="form-row">
                             <div class="col">
                                 <!--<label for="alarmNumber">Filter tools</label>-->
-                                <select name="alarmNumber" id="alarmNumber" style="height: 2.3rem;"
-                                    class="btn btn-blue-dash dropdown-toggle text-center text-white">
-                                    <option value="" selected>Choose an alarm</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                <select name="alarmNumber" id="alarmNumber" "
+                                    class=" btn btn-blue-dash dropdown-toggle text-center text-white"
+                                    style="max-width: 150px;">
+                                    <option class="text-wrap" value="" selected>Alarm</option>
+                                    <option value="">8ST00: Door 02 open (+ST00-FQ02)</option>
+                                    <option value="">ST06: Quality - NOK counter reached</option>
+                                    <option value="">ST01: Feed female housing type NOK, remove part (+ST01-BG03)
+                                    </option>
+                                    <option value="">ST00: Box 1 full (box change, 3 seconds)</option>
+
                                 </select>
                             </div>
 
@@ -124,7 +125,8 @@
                             </div>
 
                             <div class="col">
-                                <a type="" class="btn btn-outline-primary btn-block" onclick="filterDashboard()">Filter</a>
+                                <a type="" class="btn btn-outline-primary btn-block"
+                                    onclick="filterDashboard()">Filter</a>
                             </div>
                         </div>
                     </form>
@@ -134,93 +136,112 @@
             <!-- Dashboard Section-->
             <div class="row mt-4 mb-4">
                 <!-- Main Pareto Chart-->
-                <div class="col-11 mb-4">
+                <div class="col-10 mb-4">
                     <div class="card shadow-sm">
                         <div class="card-header bg-white border-0">
                             <div class="row">
                                 <div class="col-6">
-                                    <h5 class="card-title" id="title_machines">All Machines</h5>
+                                    <h4 class="card-title blue-dash" id="title_machines">All Machines</h4>
                                     <h6 class="card-subtitle text-muted" id="filter_text">Resume of general data</h6>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="card-body">
-                            <p class="ml-3"><small>Hours</small></p>
+                        <div class="card-body pt-0 px-0">
+                            <p class="ml-4"><small>Hours</small></p>
                             <canvas id="myChart" height="100"></canvas>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-1 mt-0 pl-0">
+
+                <!-- Machines Check List-->
+                <div class="col-2 mt-0">
                     <h4 class="blue-dash font-weight-bold">Machines</h4>
                     <ul class="list-group p-4">
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H392" class="custom-control-input" id="customSwitch1" name="customSwitch">
+                            <input type="checkbox" value="H392" class="custom-control-input" id="customSwitch1"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch1">H392</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H393" class="custom-control-input" id="customSwitch2" name="customSwitch">
+                            <input type="checkbox" value="H393" class="custom-control-input" id="customSwitch2"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch2">H393</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H394" class="custom-control-input" id="customSwitch3" name="customSwitch">
+                            <input type="checkbox" value="H394" class="custom-control-input" id="customSwitch3"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch3">H394</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H412" class="custom-control-input" id="customSwitch4" name="customSwitch">
+                            <input type="checkbox" value="H412" class="custom-control-input" id="customSwitch4"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch4">H412</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H442" class="custom-control-input" id="customSwitch5" name="customSwitch">
+                            <input type="checkbox" value="H442" class="custom-control-input" id="customSwitch5"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch5">H442</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H452" class="custom-control-input" id="customSwitch6" name="customSwitch">
+                            <input type="checkbox" value="H452" class="custom-control-input" id="customSwitch6"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch6">H452</label>
                         </li>
 
                         <li class="custom-checkbox" onclick="selectedMachine()">
-                            <input type="checkbox" value="H454" class="custom-control-input" id="customSwitch7" name="customSwitch">
+                            <input type="checkbox" value="H454" class="custom-control-input" id="customSwitch7"
+                                name="customSwitch">
                             <label class="custom-control-label" for="customSwitch7">H454</label>
                         </li>
                     </ul>
                 </div>
+
                 <!-- Frequency & Time consumption graphics-->
-                <div class="col-12 mb-4">
-                    <p>
-                        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                            aria-expanded="false" aria-controls="multiCollapseExample1">Toggle Frequency Chart</a>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
-                            data-target="#multiCollapseExample2" aria-expanded="false"
-                            aria-controls="multiCollapseExample2">Toggle Time Consumption Chart</button>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
-                            data-target=".multi-collapse" aria-expanded="false"
-                            aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both charts</button>
-                    </p>
+                <div class="col-12 mt-4 mb-4">
+                    <div class="row mb-4">
+                        <div class="col-4">
+                            <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0"
+                                data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+                                aria-controls="multiCollapseExample1">Toggle Frequency Chart</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0"
+                                type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
+                                aria-expanded="false" aria-controls="multiCollapseExample2">Toggle Time Consumption
+                                Chart</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-block btn-outline-primary border-left-0 border-right-0 border-top-0 rounded-0" type="button" data-toggle="collapse"
+                                data-target=".multi-collapse" aria-expanded="false"
+                                aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both charts</button>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col mr-0">
+                        <div class="col-6">
                             <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                <h4 class="blue-dash">Frequency <small class="text-muted" id="frequency_title">- All Machines</small></h4>
+                                <h4 class="blue-dash">Frequency <small class="text-muted" id="frequency_title">- All
+                                        Machines</small></h4>
                                 <h6 id="frequency_filter">Resume of general data</h6>
-                                <div class="card shadow-sm card-body px-0" >
+                                <div class="card shadow-sm card-body px-0">
                                     <p class="ml-3"><small>Hours</small></p>
                                     <canvas id="myChart2" height="180"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            
+                        <div class="col-6">
+
                             <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                <h4 class="blue-dash">Time Consumption <small class="text-muted" id="consumption_title">- All Machines</small></h4>
-            
+                                <h4 class="blue-dash">Time Consumption <small class="text-muted"
+                                        id="consumption_title">- All Machines</small></h4>
+
                                 <h6 id="consumption_filter">Resume of general data</h6>
-                                <div class="card shadow-sm card-body px-0" >
+                                <div class="card shadow-sm card-body px-0">
                                     <p class="ml-3"><small>Hours</small></p>
                                     <canvas id="myChart3" height="180"></canvas>
                                 </div>

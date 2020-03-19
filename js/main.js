@@ -79,7 +79,7 @@ $(document).ready(function () {
             backgroundColor: "#FF9300",
             pointBorderWidth: 5,
             fill: false,
-            data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00],
+            data: [32.04, 58.05, 70.9, 80.60, 88.00, 95.00, 100.00],
             yAxisID: 'y-axis-2'
         }, {
             type: "bar",

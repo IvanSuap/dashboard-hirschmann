@@ -18,7 +18,7 @@ body{
 }
 
 .nav-link:hover{
-    font-size: 1.04em !important;
+    color: #034475 !important;
 }
 
 .icon{
@@ -63,3 +63,4 @@ body{
 .btn-primary{
     background-color: #005597 !important;
 }
+
