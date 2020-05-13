@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirschmann Automotive</title>
 
-    <!-- CSS -->
+   <!-- Links to load de css files. -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap-clockpicker.min.css">
 
-    <!-- CDNs-->
+    <!-- Links to load the CDN's. -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 </head>
 
 <body class="bg-light">
-    <!-- Navbar -->
+    <!-- Navigation section -->
 
     <nav class="navbar navbar-expand-lg  bg-light shadow-sm bg-white sticky-top">
         <a id="imageBrand" class="navbar-brand" href="index.html" alt="Hirschmann Automotive Logo">
@@ -45,7 +45,7 @@
         </div>
     </nav>
 
-    <!-- Main -->
+    <!-- Main content-->
     <main>
         <div class="container pr-0">
             <div class="text-right col-12 mt-4 px-0 mx-0">
@@ -62,7 +62,7 @@
                     <form action="">
                         <div class="form-row">
                             <div class="col">
-                                <!--<label for="alarmNumber">Filter tools</label>-->
+                                <!-- Dropdown of alarms. -->
                                 <select name="alarmNumber" id="alarmNumber" "
                                     class=" btn btn-blue-dash dropdown-toggle text-center text-white"
                                     style="max-width: 150px;">
@@ -75,7 +75,7 @@
 
                                 </select>
                             </div>
-
+                                <!-- Date and time inputs -->
                             <div class="col">
                                 <div class="input-group input-focus">
                                     <input type="date" class="form-control border-right-0" name="startDate"
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- Filter button -->
                             <div class="col">
                                 <a type="" class="btn btn-outline-primary btn-block"
                                     onclick="filterDashboard()">Filter</a>
@@ -202,7 +202,7 @@
                     </ul>
                 </div>
 
-                <!-- Frequency & Time consumption graphics-->
+                <!-- Frequency  graph-->
                 <div class="col-12 mt-4 mb-4">
                     <div class="row mb-4">
                         <div class="col-12">
@@ -221,7 +221,7 @@
                                 <div class="card shadow-sm card-body px-0" style="height: 100%;">
                                     <p class="ml-3"><small>Times</small></p>
                                     <canvas id="myChart2" height=80"></canvas>
-                                    <canvas id="myChart3" height=80" style="display: none;"></canvas>
+                                    <canvas id="myChart3" height=80" style="display: none;"></canvas><!-- this is hide for avoid errors -->
                                 </div>
                             </div>
                         </div>

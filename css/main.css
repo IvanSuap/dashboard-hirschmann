@@ -1,8 +1,10 @@
+/*Font of the site*/
 body{
     font-family: 'Roboto', sans-serif !important;
     
 }
 
+/*Hirschmann color, text, buttons, background*/
 .blue-dash{
     color: #005597;
 }
@@ -21,10 +23,6 @@ body{
     color: #034475 !important;
 }
 
-.icon{
-    color: #D6D6D6;
-}
-
 .btn-outline-primary{
     border-color: #005597 !important;
     color: #005597 !important;
@@ -34,6 +32,14 @@ body{
     background-color: #005597 !important;
     color: white !important;
 }
+
+
+
+/*Icons color and sizes*/
+.icon{
+    color: #D6D6D6;
+}
+
 
 .big-icon{
     color: #D6D6D6;
@@ -50,6 +56,8 @@ body{
     font-size: 3.6em;
 }
 
+
+/*Custom class from bootstrap*/
 .btn-warning{
     background-color: #B56200 !important;
     color: white !important;

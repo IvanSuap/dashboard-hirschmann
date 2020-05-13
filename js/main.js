@@ -1,12 +1,14 @@
 $(document).ready(function () {
 
+    // Inputs icons
     $('.input-focus').on('click', function () {
         $(this).children('input').focus();
     });
 
+    // Initialize the clockpcker for the time inputs.
     $('.clockpicker').clockpicker();
 
-    // Function to format labels of the alarms 
+    // Function to format labels of the alarms in the charts
     function formatLabel(str, maxwidth) {
         var sections = [];
         var words = str.split(" ");
@@ -48,9 +50,12 @@ $(document).ready(function () {
         return sections;
     }
 
-
+    // Test data of in the main Pareto chart.
     var data = {
+        // Labels of the alarm names.
         labels: ["8ST00: Door 02 open (+ST00-FQ02)", "ST06: Quality - NOK counter reached", "ST00: Box 1 full (box change, 3 seconds)", "ST01: Feed female housing type NOK, remove part (+ST01-BG03)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)"],
+        
+        // Line chart of Pareto.
         datasets: [{
             type: "line",
             borderColor: "#FF9300",
@@ -61,6 +66,8 @@ $(document).ready(function () {
             data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00],
             yAxisID: 'y-axis-2'
         }, {
+
+            // Bar chart of the alarms.
             type: "bar",
             borderColor: "rgba(40,53,147 ,1)",
             borderWidth: 3,
@@ -70,9 +77,14 @@ $(document).ready(function () {
         }]
     };
 
+    // Test data for the Frecuency chart
     var data2 = {
+
+        // Labels of the Machines names.
         labels: ["H392", "H393", "H394", "H412", "H442", "H452", "H454"],
         datasets: [{
+
+            // Line chart of Parerto.
             type: "line",
             borderColor: "#FF9300",
 
@@ -82,6 +94,8 @@ $(document).ready(function () {
             data: [32.04, 58.05, 70.9, 80.60, 88.00, 95.00, 100.00],
             yAxisID: 'y-axis-2'
         }, {
+
+            // Bar chart of the machines.
             type: "bar",
             borderColor: "rgba(40,53,147 ,1)",
             borderWidth: 3,
@@ -91,6 +105,7 @@ $(document).ready(function () {
         }]
     };
 
+    // Options for better visualization.
     var options = {
 
         scales: {
@@ -148,6 +163,7 @@ $(document).ready(function () {
     };
 
 
+    // Function that load all charts on load de main page.
     window.onload = function () {
         var ctx = document.getElementById("myChart").getContext("2d");
 
@@ -178,6 +194,8 @@ $(document).ready(function () {
 
 });
 
+// Function test to change the titles after clicking in any elemento of the machines check list.
+
 
 function selectedMachine(){
 
@@ -200,6 +218,7 @@ function selectedMachine(){
     });
 }
 
+// Functions test to change the date labels after clicking on the filter button.
 function filterDashboard(){
     let startDate = document.getElementById("startDate").value;
     let startTime = document.getElementById("startTime").value;
