@@ -50,9 +50,13 @@ $(document).ready(function () {
         return sections;
     }
 
+    
     // Test data of in the main Pareto chart.
+    // This code will can be useful on the develop of the backend.
     var data = {
+
         // Labels of the alarm names.
+        // These labels will cane be changed for an array with a query from any database.
         labels: ["8ST00: Door 02 open (+ST00-FQ02)", "ST06: Quality - NOK counter reached", "ST00: Box 1 full (box change, 3 seconds)", "ST01: Feed female housing type NOK, remove part (+ST01-BG03)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)", "ST00: Box 1 full (box change, 3 seconds)"],
         
         // Line chart of Pareto.
@@ -63,7 +67,7 @@ $(document).ready(function () {
             backgroundColor: "#FF9300",
             pointBorderWidth: 5,
             fill: false,
-            data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00],
+            data: [17.07, 32.04, 46.05, 57.9, 68.9, 77.60, 84.00, 89.36, 95.00, 100.00], // This array can be changed for a query from the database.
             yAxisID: 'y-axis-2'
         }, {
 
@@ -72,16 +76,17 @@ $(document).ready(function () {
             borderColor: "rgba(40,53,147 ,1)",
             borderWidth: 3,
             backgroundColor: "rgba(40,53,147 ,0.7)",
-            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1],
+            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1], // This array can be changed for a query from the database.
             yAxisID: 'y-axis-1'
         }]
     };
 
     // Test data for the Frecuency chart
+    // This code will can be useful on the develop of the backend.
     var data2 = {
 
         // Labels of the Machines names.
-        labels: ["H392", "H393", "H394", "H412", "H442", "H452", "H454"],
+        labels: ["H392", "H393", "H394", "H412", "H442", "H452", "H454"],  // This array can be changed for a query from the database.
         datasets: [{
 
             // Line chart of Parerto.
@@ -91,7 +96,7 @@ $(document).ready(function () {
             backgroundColor: "#FF9300",
             pointBorderWidth: 5,
             fill: false,
-            data: [32.04, 58.05, 70.9, 80.60, 88.00, 95.00, 100.00],
+            data: [32.04, 58.05, 70.9, 80.60, 88.00, 95.00, 100.00],  // This array can be changed for a query from the database.
             yAxisID: 'y-axis-2'
         }, {
 
@@ -100,7 +105,7 @@ $(document).ready(function () {
             borderColor: "rgba(40,53,147 ,1)",
             borderWidth: 3,
             backgroundColor: "rgba(40,53,147 ,0.7)",
-            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1],
+            data: [16, 14, 11, 9, 8, 6, 5, 4, 2, 1],  // This array can be changed for a query from the database.
             yAxisID: 'y-axis-1'
         }]
     };
